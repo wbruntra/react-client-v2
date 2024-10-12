@@ -1,0 +1,149 @@
+$dark-purple: #4a148c;
+$grey: #fff;
+$light-orange: #ffa726;
+$dark-orange: #fb8c00;
+$light-blue: #4fc3f7;
+$pink: #f48fb1;
+$amber: #ffd740;
+$purple: #8e24aa;
+$light-green: #9ccc65;
+
+@import 'bootstrap/scss/bootstrap-grid.scss';
+
+body {
+  // background-color: $dark-purple;
+  // color: white;
+  font-size: 1.2em;
+}
+
+.main-content {
+  padding: 25px;
+}
+
+// .container {
+//   background-color: $white;
+// }
+
+// .card {
+//   background-color: $grey;
+//   color: black;
+// }
+
+.bg {
+  &-dark-orange {
+    background-color: $dark-orange;
+  }
+  &-light-orange {
+    background-color: $light-orange;
+  }
+  &-light-blue {
+    background-color: $light-blue;
+  }
+  &-pink {
+    background-color: $pink;
+  }
+  &-amber {
+    background-color: $amber;
+  }
+  &-purple {
+    background-color: $purple;
+  }
+  &-light-green {
+    background-color: $light-green;
+  }
+  &-error-red {
+    background-color: #f44336;
+  }
+}
+
+.game-over {
+  .card {
+    padding: 40px;
+  }
+}
+
+.card {
+  transition: filter linear 0.2s;
+}
+
+.blurry {
+  filter: grayscale(0.9) blur(7px);
+}
+
+.player-name {
+  padding: 3px;
+}
+
+.no-dots {
+  list-style-type: none;
+}
+
+.card-column {
+  padding-left: 3px;
+  padding-right: 3px;
+
+  @include media-breakpoint-up(md) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+.card {
+  &.available-game {
+    min-height: 80px;
+  }
+}
+
+.board {
+  margin-top: 60px;
+}
+
+$rotate-width: 560px;
+$four-col-width: 980px;
+
+$card-green: #61d020;
+$card-blue: #1b2f92;
+
+.board-main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 75px;
+  column-gap: 0px;
+  margin-bottom: 20px;
+}
+
+.card-holder {
+  margin: 1px;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+@media screen and (min-width: $rotate-width) {
+  .board {
+    margin-top: 20px;
+  }
+
+  .card-holder {
+    margin: 4px;
+    padding: 4px;
+    border-radius: 4px;
+  }
+
+  .board-main-container {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+}
+
+@media screen and (max-width: $rotate-width) {
+  .card-wrapper {
+    transform: rotate(90deg) scale(1.15);
+  }
+}
